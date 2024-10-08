@@ -46,7 +46,7 @@ const Navbar = () => {
                         <Link className='text-md' to='/contact'>Contact Us</Link>
                     </div>
                     <div className='hidden nav2   md:flex items-center justify-evenly'>
-                        <Link className='text-5xl font-bold text-[#4F185A]' to='/about'>LHH</Link>
+                        <Link className='text-5xl font-bold text-[#4F185A]' to='/'>LHH</Link>
                         <Link className='text-lg' to='/search'>Search Jobs</Link>
                         <Link className='text-lg' to='/find'>Find Great Talent</Link>
                         <Link className='text-lg' to='/join'>Join Us</Link>

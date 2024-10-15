@@ -8,9 +8,11 @@ import Partner from './Home/Partner'
 import Global from './Home/Global'
 import Footer from './Home/Footer'
 
+
 const Home = () => {
   return (
     <div>
+      
       <Navbar/>
       <Photo/>
       <Dream/>

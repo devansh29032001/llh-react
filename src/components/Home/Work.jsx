@@ -15,9 +15,9 @@ const data=[{
 }]
 const Work = () => {
   return (
-    <div className='w-full h-[150vh]    px-32 py-12'>
-      <h1 className='text-4xl font-semibold w-[80%]'>We're here to work for you</h1>
-      <p className='w-[75%] text-2xl text-zinc-500 mt-4'>Whether you're an individual looking to take charge of your career, an organization seeking top talent solutions, or an executive in need of tailored support, our team specializes in empowering individuals, creating comprehensive talent solutions, and supporting transformative leaders.</p>
+    <div className=' w-[200%] md:w-full h-[150vh]    px-32 py-12'>
+      <h1 className=' text-5xl md:text-4xl font-semibold md:w-[80%]'>We're here to work for you</h1>
+      <p className=' text-4xl md:w-[75%] md:text-2xl text-zinc-500 mt-4'>Whether you're an individual looking to take charge of your career, an organization seeking top talent solutions, or an executive in need of tailored support, our team specializes in empowering individuals, creating comprehensive talent solutions, and supporting transformative leaders.</p>
     <div>
         <Cards data={data}/>
     </div>

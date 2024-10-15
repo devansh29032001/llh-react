@@ -17,9 +17,9 @@ const data=[{
 const About5 = () => {
   return (
     <div className='mt-20  h-[100vh] w-full flex justify-between '>
-        {data.map((item)=>{
-          return <div className='h-[100vh] w-[32%] shadow-xl rounded-md overflow-hidden '>
-                <img  className="" src={item.src} alt=""/>
+        {data.map((item,index)=>{
+          return <div key={index} className='h-[100vh] w-[32%] shadow-xl rounded-md overflow-hidden '>
+                <img className="" src={item.src} alt=""/>
                 <h1 className='p-2 text-2xl'>{item.title}</h1>
                 <p className='p-2  text-zinc-600'>{item.description}</p>
             </div>

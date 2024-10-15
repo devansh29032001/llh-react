@@ -2,32 +2,32 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='w-full h-full bg-[#290C2F] px-24 py-8'>
-        <h1 className='text-white text-4xl  font-semibold'>Are you Ready for Next?</h1>
-        <p className='text-white mt-5 text-xl w-1/2 '>
+    <div className='md:w-full w-[200%] mt-64 md:mt-0  h-full bg-[#290C2F] px-24 py-8'>
+        <h1 className='text-white text-5xl md:text-4xl  font-semibold'>Are you Ready for Next?</h1>
+        <p className='text-white mt-5 text-2xl md:text-xl md:w-1/2 '>
         LHH helps individuals, teams, and organizations find and prepare for what's next in the world of work. We support clients needs throughout the talent journey, from recruitment to career transitions and leadership development. We empower organizations to expand their capabilities and workers to build brighter futures.
         </p>
 
-        <div className='flex mt-10 justify-between'>
-            <div className='h-36 w-[32%]  p-3'>
-                <h1 className=' text-white text-2xl'>Find a job</h1>
+        <div className='flex mt-10 justify-between flex-col gap-10 md:flex-row'>
+            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
+                <h1 className=' text-white  text-3xl md:text-2xl'>Find a job</h1>
                 <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
                 <a  className="text-pink-500" href="">FIND A JOB</a>
             </div>
-            <div className='h-36 w-[32%]  p-3'>
-                <h1 className=' text-white text-2xl'>Find a job</h1>
+            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
+                <h1 className=' text-white text-3xl md:text-2xl'>Find a job</h1>
                 <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
                 <a  className="text-pink-500" href="">FIND A JOB</a>
             </div>
-            <div className='h-36 w-[32%]  p-3'>
-                <h1 className=' text-white text-2xl'>Find a job</h1>
+            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
+                <h1 className=' text-white text-3xl md:text-2xl'>Find a job</h1>
                 <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
                 <a  className="text-pink-500" href="">FIND A JOB</a>
             </div>
 
         </div>
 
-        <div className='flex mt-20 justify-between '>
+        <div className='flex mt-20 md:justify-between flex-col md:flex-row gap-10 md:gap-0 '>
             <div className='flex flex-col'>
                 <a className='text-white text-4xl font-semibold ' href="">LHH</a>
                 <p className='text-white mt-3'>Download the app</p>
@@ -77,18 +77,18 @@ const Footer = () => {
             <hr />
         </div>
 
-        <div className='flex text-white items-center justify-between '>
-            <h1 className='text-zinc-500'>LHH 2024</h1>
+        <div className='flex text-white md:items-center md:justify-between flex-col md:flex-row gap-10  '>
+            <h1 className=' text-2xl text-zinc-500'>LHH 2024</h1>
 
-            <a className='text-sm' href="">Cookie Policy</a>
-            <a className='text-sm' href="">Diversity and Inclusion</a>
-            <a className='text-sm' href="">EEO Statement and Legal Notices</a>
-            <a className='text-sm' href="">Privacy Policy</a>
-            <a className='text-sm' href="">Terms and Conditions</a>
-            <a className='text-sm' href="">Your Privacy Choices</a>
+            <a className=' text-2xl md:text-sm' href="">Cookie Policy</a>
+            <a className=' text-2xl md:text-sm' href="">Diversity and Inclusion</a>
+            <a className=' text-2xl md:text-sm' href="">EEO Statement and Legal Notices</a>
+            <a className=' text-2xl md:text-sm' href="">Privacy Policy</a>
+            <a className=' text-2xl md:text-sm' href="">Terms and Conditions</a>
+            <a className=' text-2xl md:text-sm' href="">Your Privacy Choices</a>
             <div className='flex gap-4'>
-            <i className=" text-3xl  ri-linkedin-box-fill"></i>
-            <i class=" text-3xl ri-twitter-fill"></i>
+            <i className=" text-4xl md:text-3xl  ri-linkedin-box-fill"></i>
+            <i class=" text-4xl md:text-3xl ri-twitter-fill"></i>
             </div>
         </div>
 

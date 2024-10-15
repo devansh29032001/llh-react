@@ -2,9 +2,9 @@ import React from 'react'
 
 const About4 = () => {
   return (
-    <div className='mt-10'>
-      <h1 className='text-4xl '>Meet our team</h1>
-      <p className='w-[70%] text-2xl'>Don't just take our word for it — hear it from our incredible team members. Learn about their personal journeys, professional growth, and the supportive and inclusive environment they thrive in at LHH.</p>
+    <div className='mt-10 w-[400%] md:w-full'>
+      <h1 className='text-5xl md:text-4xl '>Meet our team</h1>
+      <p className='md:w-[70%]  text-3xl md:text-2xl'>Don't just take our word for it — hear it from our incredible team members. Learn about their personal journeys, professional growth, and the supportive and inclusive environment they thrive in at LHH.</p>
       <div className='flex mt-10 justify-between '>
         <div >
             <h1 className='text-xl font-semibold w-[90%]'>"LHH has embraced me as a leader for Veterans and the LGBTQ+ community while also affording me the opportunity to explore different career paths including moving into a global role."</h1>

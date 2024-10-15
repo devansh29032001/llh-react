@@ -10,17 +10,17 @@ const data=[{
 }]
 const About2 = () => {
   return (
-    <div className=' mt-10 h-full  w-full '>
-      <h1 className='text-4xl font-semibold w-[60%]'>Digital solutions built for the evolving world of work</h1>
+    <div className=' mt-10 h-full w-[400%]  md:w-full '>
+      <h1 className='text-4xl font-semibold w-[100%] md:w-[60%]'>Digital solutions built for the evolving world of work</h1>
 
-      <p className='text-2xl text-zinc-600 mt-4 w-[70%]'>LHH is part of The Adecco Group - the world’s leading talent advisory and solutions company - and is enhanced by a variety of industry leading digital solutions including General Assembly and EZRA. Learn more about these solutions below.</p>
+      <p className='text-2xl text-zinc-600 mt-4 w-[100%] md:w-[70%]'>LHH is part of The Adecco Group - the world’s leading talent advisory and solutions company - and is enhanced by a variety of industry leading digital solutions including General Assembly and EZRA. Learn more about these solutions below.</p>
 
-      <div className='card-container h-[70%] w-full  mt-10 flex justify-between'>
+      <div className='card-container h-[70%]  md:w-full  mt-10 flex flex-col md:flex-row  md:justify-between gap-5 md:gap-0'>
         {data.map((item)=>{
-            return <div className='card w-[48%] h-[90vh]  shadow-2xl hover:scale-105 duration-100'>
+            return <div className='card md:w-[48%] h-[90vh]  shadow-2xl hover:scale-105 duration-100'>
               <img className='card-img w-full' src={item.src} alt={item.title} />
-              <h2 className='card-title text-2xl font-semibold p-3 '>{item.title}</h2>
-              <p className='card-description text-base p-3'>{item.description}</p>
+              <h2 className='card-title  text-4xl md:text-2xl font-semibold p-3 '>{item.title}</h2>
+              <p className='card-description text-2xl md:text-base p-3'>{item.description}</p>
             </div>
   
         })}

@@ -7,7 +7,7 @@ const Contact = () => {
         <>
             <Navbar/>
 
-            <div className='p-32'>
+            <div className='px-24 py-32'>
                 <Contact1/>
             </div>
         </>

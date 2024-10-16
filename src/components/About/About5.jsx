@@ -16,12 +16,12 @@ const data=[{
 }]
 const About5 = () => {
   return (
-    <div className='mt-20  h-[100vh] w-full flex justify-between '>
+    <div className='mt-40 md:mt-20  md:auto  w-[400%] md:w-full  flex flex-col md:flex-row  justify-between gap-20 md:gap-0'>
         {data.map((item,index)=>{
-          return <div key={index} className='h-[100vh] w-[32%] shadow-xl rounded-md overflow-hidden '>
-                <img className="" src={item.src} alt=""/>
-                <h1 className='p-2 text-2xl'>{item.title}</h1>
-                <p className='p-2  text-zinc-600'>{item.description}</p>
+          return <div key={index} className='h-auto md:h-auto  w-[100%] md:w-[32%] shadow-xl rounded-md overflow-hidden '>
+                <img className="w-full" src={item.src} alt=""/>
+                <h1 className='p-2 text-4xl md:text-2xl'>{item.title}</h1>
+                <p className='text-3xl md:text-sm p-2  text-zinc-600 mb-10'>{item.description}</p>
             </div>
         })}
     </div>

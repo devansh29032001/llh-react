@@ -27,7 +27,7 @@ const About3 = () => {
       <div className='core-container h-full p-2 flex flex-col md:flex-wrap w-full  md:justify-between md:flex-row '>
 
         {data.map((item)=>{
-            return <div className="md:w-[25vw]  md:h-[35vh]  shadow-xl p-3 rounded-md">
+            return <div className="md:w-[25vw] mb-10  md:h-[35vh]  shadow-xl p-3 rounded-md">
                 <h1 className=' text-3xl md:text-xl mb-4 mt-2'>{item.title}</h1>
                 <p className='text-xl md:text-lg text-zinc-700'>{item.description}</p>
             </div>

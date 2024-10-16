@@ -4,7 +4,7 @@ const Cards = (props) => {
     const{data} = props;
     console.log(data)
   return (
-    <div className='flex flex-col md:flex-row bg-red-100 w-full   gap-20 md:justify-between items-center  mt-10'>
+    <div className='flex flex-col md:flex-row  w-full   gap-20 md:justify-between items-center  mt-10'>
         {data.map((item, index) => (
           <div key={index} className=' h-full rounded-md card w-[70%] md:w-[32%]  shadow-xl hover:scale-105 duration-200'>
             <img className=' h-auto md:h-56 w-full object-cover rounded-md' src={item.src} alt="" />

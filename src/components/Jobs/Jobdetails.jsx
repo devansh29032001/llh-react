@@ -14,7 +14,9 @@ const Jobdetails = () => {
   if (!job) {
     return <h1>Job not found</h1>; // You can also redirect or handle it differently
   }
-
+  const handleSearc=()=>{
+    window.scrollTo({top:0,behavior:'smooth' })
+  }
   return (
     <>
       

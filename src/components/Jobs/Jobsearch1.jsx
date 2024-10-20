@@ -8,7 +8,7 @@ const Jobsearch1 = () => {
 
   const handleSearch=(e)=>{
     e.preventDefault();
-    navigate(`/search?jobtype=${jobType}&location=${location}`)
+    navigate(`/search?jobType=${jobType}&location=${location}`)
   }
 
   return (
@@ -19,7 +19,7 @@ const Jobsearch1 = () => {
          onChange={(e) => setJobType(e.target.value)} // Update state on input change
         />
 
-        <input type="text" name='profession' placeholder='Enter Location'  className='border border-zinc-300 text-3xl px-20 py-6 md:px-4 w-full  md:text-lg md:py-2 md:w-[20vw] rounded-md' 
+        <input type="text" name='location' placeholder='Enter Location'  className='border border-zinc-300 text-3xl px-20 py-6 md:px-4 w-full  md:text-lg md:py-2 md:w-[20vw] rounded-md' 
         value={location}
         onChange={(e) => setLocation(e.target.value)} // Update state on input change
         />

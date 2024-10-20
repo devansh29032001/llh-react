@@ -28,10 +28,9 @@ const Jobsearch2 = () => {
   }, []);
 
   useEffect(() => {
-    // Filter jobs based on query parameters
     const filtered = jobs.filter((job) =>
-      job.title.toLowerCase().includes(jobType.toLowerCase()) &&
-      job.location.toLowerCase().includes(jobLocation.toLowerCase())
+      (jobType ? job.title.toLowerCase().includes(jobType.toLowerCase()) : true) &&
+      (jobLocation ? job.location.toLowerCase().includes(jobLocation.toLowerCase()) : true)
     );
     setFilteredJobs(filtered);
   }, [jobType, jobLocation, jobs]);
@@ -62,7 +61,7 @@ const Jobsearch2 = () => {
   }
 
   return (
-    <div className="container w-[300%]  md:w-full h-auto p-10 flex flex-wrap flex-col md:flex-row  justify-between">
+    <div className="container w-[300%]   md:w-full h-auto p-10 flex flex-wrap flex-col md:flex-row  justify-between">
       {currentJobs.map((job) => (
         <Link to={`/search/${job.id}`} key={job.id} onClick={openDetail}>
           <div className="card-container bg-gradient-to-r from-[#581F64] to-[#290C2F] mb-10 md:h-[30vh] flex flex-col gap-4 md:gap-0 justify-evenly md:w-[24vw] p-3 rounded-lg shadow-2xl text-white hover:scale-105 duration-200">

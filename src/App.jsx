@@ -6,6 +6,7 @@ import Contact from './components/Contact'
 import Login from './components/Login/Login'
 import Jobsearch from './components/Jobs/Jobsearch'
 import Jobdetails from './components/Jobs/Jobdetails'
+import Candidates from './components/Candidates'
 const App = () => {
   return (
    <div>
@@ -17,6 +18,7 @@ const App = () => {
 
         <Route path='/search' element={<Jobsearch/>}/>
         <Route path='/search/:id' element={<Jobdetails/>}/>
+        <Route path='/find' element={<Candidates/>}/>
       </Routes>
       
       

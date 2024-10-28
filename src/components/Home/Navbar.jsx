@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ userLoggedIn, onLogout }) => {
     const [navbarOpen, setNavbarOpen] = useState(false); // Sidebar state
     const [showNavbar, setShowNavbar] = useState(true); // Track visibility of top navbar
     const [lastScrollY, setLastScrollY] = useState(0); // Track last scroll position
@@ -35,61 +34,40 @@ const Navbar = () => {
 
     
 
-
-     
     return (
         <>
             {/* Top Navbar for large screens */}
-
             <div
-                className={`header fixed z-[999] top-0 bg-white w-full shadow-xl
-                    
-                    transition-transform duration-500 ${
+                className={`header fixed z-[999] top-0 bg-white w-full shadow-xl transition-transform duration-500 ${
                     showNavbar ? 'translate-y-0' : '-translate-y-full'
                 }`}
             >
                 <div className='nav h-32 w-full px-8 py-6'>
                     {/* Links section for large screens */}
                     <div className='hidden nav1 px-20 md:flex gap-4 justify-end'>
-                        <Link className='text-md' to='/about'>
-                            About Us
-                        </Link>
-                        <Link className='text-md' to='/contact'>
-                            Contact Us
-                        </Link>
-                        <Link className='text-md' to='/login'>
-                            Login/Signup
-                        </Link>
+                        <Link className='text-md' to='/about'>About Us</Link>
+                        <Link className='text-md' to='/contact'>Contact Us</Link>
+                        {userLoggedIn ? (
+                            <button className='text-md' onClick={onLogout}>Logout</button>
+                        ) : (
+                            <Link className='text-md' to='/login'>Login/Signup</Link>
+                        )}
                     </div>
 
                     {/* Main navigation for large screens */}
                     <div className='hidden nav2 md:flex items-center justify-evenly'>
-                        <Link className='text-5xl font-bold text-[#4F185A]' to='/'>
-                            LHH
-                        </Link>
-                        <Link className='text-lg' to='/search'>
-                            Search Jobs
-                        </Link>
-                        <Link className='text-lg' to='/find'>
-                            Find Great Talent
-                        </Link>
-                        <Link className='text-lg' to='/join'>
-                            Join Us
-                        </Link>
-                        <Link className='text-lg' to='/solution'>
-                            Solutions
-                        </Link>
-                        <Link className='text-lg' to='/about'>
-                            Our Expertise
-                        </Link>
+                        <Link className='text-5xl font-bold text-[#4F185A]' to='/'>LHH</Link>
+                        <Link className='text-lg' to='/search'>Search Jobs</Link>
+                        <Link className='text-lg' to='/find'>Find Great Talent</Link>
+                        <Link className='text-lg' to='/join'>Join Us</Link>
+                        <Link className='text-lg' to='/solution'>Solutions</Link>
+                        <Link className='text-lg' to='/about'>Our Expertise</Link>
                     </div>
 
                     {/* Button to toggle sidebar on mobile */}
                     <div className='md:hidden flex justify-between'>
                         <h1 className='text-6xl font-bold text-purple-900'>LHH</h1>
-                        <button onClick={toggleNavbar}>
-                            {navbarOpen ? '' : 'OPEN'}
-                        </button>
+                        <button onClick={toggleNavbar}>{navbarOpen ? 'CLOSE' : 'OPEN'}</button>
                     </div>
                 </div>
             </div>
@@ -102,45 +80,31 @@ const Navbar = () => {
             >
                 <div className="p-6 flex flex-col h-full justify-between">
                     <div>
-                       <div className='flex justify-between  '>
-                       <Link className="text-5xl font-bold text-[#4F185A] mb-8 block" to="/" onClick={toggleNavbar}>
-                            LHH
-                        </Link>
-                         <button onClick={toggleNavbar}>
-                            {navbarOpen ? 'CLOSE' : 'OPEN'}
-                        </button>
-                       </div>
+                        <div className='flex justify-between'>
+                            <Link className="text-5xl font-bold text-[#4F185A] mb-8 block" to="/" onClick={toggleNavbar}>
+                                LHH
+                            </Link>
+                            <button onClick={toggleNavbar}>{navbarOpen ? 'CLOSE' : 'OPEN'}</button>
+                        </div>
 
-                        <div className="flex  flex-col gap-20">
-                            <Link className="text-3xl" to="/search" onClick={toggleNavbar}>
-                                Search Jobs
-                            </Link>
-                            <Link className="text-3xl" to="/find" onClick={toggleNavbar}>
-                                Find Great Talent
-                            </Link>
-                            <Link className="text-3xl" to="/join" onClick={toggleNavbar}>
-                                Join Us
-                            </Link>
-                            <Link className="text-3xl" to="/solution" onClick={toggleNavbar}>
-                                Solutions
-                            </Link>
-                            <Link className="text-3xl" to="/about" onClick={toggleNavbar}>
-                                Our Expertise
-                            </Link>
+                        <div className="flex flex-col gap-20">
+                            <Link className="text-3xl" to="/search" onClick={toggleNavbar}>Search Jobs</Link>
+                            <Link className="text-3xl" to="/find" onClick={toggleNavbar}>Find Great Talent</Link>
+                            <Link className="text-3xl" to="/join" onClick={toggleNavbar}>Join Us</Link>
+                            <Link className="text-3xl" to="/solution" onClick={toggleNavbar}>Solutions</Link>
+                            <Link className="text-3xl" to="/about" onClick={toggleNavbar}>Our Expertise</Link>
                         </div>
                     </div>
 
-                    <div className="border-t mt-6 pt-4 ">
+                    <div className="border-t mt-6 pt-4">
                         <div className="flex flex-col mb-20 gap-20">
-                            <Link className="text-2xl" to="/about" onClick={toggleNavbar}>
-                                About Us
-                            </Link>
-                            <Link className="text-2xl" to="/contact" onClick={toggleNavbar}>
-                                Contact Us
-                            </Link>
-                            <Link className="text-2xl" to="/login" onClick={toggleNavbar}>
-                                Login/Signup
-                            </Link>
+                            <Link className="text-2xl" to="/about" onClick={toggleNavbar}>About Us</Link>
+                            <Link className="text-2xl" to="/contact" onClick={toggleNavbar}>Contact Us</Link>
+                            {userLoggedIn ? (
+                                <button className="text-2xl" onClick={onLogout}>Logout</button>
+                            ) : (
+                                <Link className="text-2xl" to="/login" onClick={toggleNavbar}>Login/Signup</Link>
+                            )}
                         </div>
                     </div>
                 </div>

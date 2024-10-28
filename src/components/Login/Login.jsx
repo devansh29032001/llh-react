@@ -1,55 +1,71 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from '../Home/Navbar'
-const Login = () => {
-    const[isLoggedIn,setIsLoggedIn]=useState(true)
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../Home/Navbar";
+
+const LoginPage = ({setUserLoggedIn}) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  const navigate = useNavigate();
+
+  const handleLoginSubmit = (event) => {
+    event.preventDefault();
+
+    const storedUser = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (
+      storedUser &&
+      storedUser.email === email &&
+      storedUser.password === password
+    ) {
+      alert("Login successful!");
+      localStorage.setItem('userLoggedIn','true')
+      setUserLoggedIn(true); // Set the user as logged in
+      navigate("/dashboard"); // Redirect to dashboard
+    } else {
+      alert("Invalid email or password.");
+    }
+  };
 
   return (
-    
-   <>
-   <Navbar/>
-        <div className='container h-screen w-full  flex justify-center  items-center ' style={{
-            background:`url("https://plus.unsplash.com/premium_photo-1661281350976-59b9514e5364?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D),
-            background-size: 'cover',
-            
-            `
-        }}>
-                <div className='form-container h-auto w-[80%] bg-zinc-100 md:h-auto md:w-[50%] lg:h-auto lg:w-[30%] px-10 py-3 flex flex-col gap-5 rounded-md mt-32'>
-                    <div className='form-toggle flex justify-evenly mt-2 '>
-                            <button onClick={()=>setIsLoggedIn(true)} className={isLoggedIn?`px-7 py-2 bg-purple-900 text-2xl rounded-md text-white`:`px-7 py-2 bg-white text-2xl rounded-md`}>Login</button>
-                            <button className={!isLoggedIn?`px-6 py-3 bg-purple-900 text-2xl rounded-md text-white`:`px-6 py-3 bg-white text-2xl rounded-md`}onClick={()=>setIsLoggedIn(false)}>Signup</button>
-                    </div>
+    <>
+      <Navbar
+        userLoggedin={false}
+        onLogout={() => {
+        }}
+      />
+      <div className="container h-screen w-full flex justify-center items-center">
+        {/* Your login form layout */}
+        <form
+          onSubmit={handleLoginSubmit}
+          className="bg-zinc-100 p-6 rounded-md"
+        >
+          <h2 className="text-2xl mb-4">Login</h2>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="p-2 text-xl w-full rounded-md"
+            name="email"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="p-2 text-xl w-full rounded-md"
+            name="password"
+          />
+          <button className="bg-purple-800 px-4 py-2 rounded-lg w-full text-lg text-white">
+            Login
+          </button>
 
-                {isLoggedIn ?
-                    <form action="">
-                     <div className='flex flex-col gap-5'>
-                          <input type="email" placeholder='email' name="email" className='p-2 text-xl w-full rounded-md' />
-                         <input type="password" placeholder='password' name="password" className='p-2 text-xl w-full rounded-md' />
+          <Link to="/signup">Signup</Link>
+        </form>
+      </div>
+    </>
+  );
+};
 
-                          <button className='bg-purple-800 px-1 py-2 rounded-lg w-[40%] self-center text-lg text-white '>Login</button>
-
-                         <a className='text-xl mb-4' onClick={()=>setIsLoggedIn(false)} href='#'>Not a member? Signup!</a>
-                     </div>
-                    </form> :
-                    
-                    <form action="">
-                     <div className='flex flex-col gap-5'>
-                     <input type="text" placeholder='Full Name' name="email" className='p-2 text-xl w-full rounded-md' />
-                         <input type="email" placeholder='Email' name="email" className='p-2 text-xl w-full rounded-md' />
-                         <input type="Password" placeholder='password' name="password" className='p-2 text-xl w-full rounded-md' />
-                    
-                        <button className='bg-purple-800 px-1 py-2 rounded-lg w-[40%] self-center text-xl text-white '>Signup</button>
-
-                        <a onClick={()=>setIsLoggedIn(true)} className='text-xl mb-4' href="#">Already a member? Login!</a>
-                    </div>
-                    </form>}
-
-
-                        
-                </div>
-        </div>
-   </>
-  )
-}
-
-export default Login
+export default LoginPage;

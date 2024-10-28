@@ -8,24 +8,7 @@ const Footer = () => {
         LHH helps individuals, teams, and organizations find and prepare for what's next in the world of work. We support clients needs throughout the talent journey, from recruitment to career transitions and leadership development. We empower organizations to expand their capabilities and workers to build brighter futures.
         </p>
 
-        <div className='flex mt-10 justify-between flex-col gap-10 md:flex-row'>
-            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
-                <h1 className=' text-white  text-3xl md:text-2xl'>Find a job</h1>
-                <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
-                <a  className="text-pink-500" href="">FIND A JOB</a>
-            </div>
-            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
-                <h1 className=' text-white text-3xl md:text-2xl'>Find a job</h1>
-                <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
-                <a  className="text-pink-500" href="">FIND A JOB</a>
-            </div>
-            <div className='h-36  w-[50%] md:w-[32%]  p-3'>
-                <h1 className=' text-white text-3xl md:text-2xl'>Find a job</h1>
-                <p className=' mb-2 text-lg text-white'>We can help you find your next career opportunity, browse thousands of jobs.</p>
-                <a  className="text-pink-500" href="">FIND A JOB</a>
-            </div>
-
-        </div>
+       
 
         <div className='flex mt-20 md:justify-between flex-col md:flex-row gap-10 md:gap-0 '>
             <div className='flex flex-col'>
